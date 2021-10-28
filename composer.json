@@ -1,0 +1,36 @@
+{
+    "name": "zonewatcher/linode-api",
+    "description": "An OpenAPI generated wrapper for the Linode V4 API.",
+    "keywords": [
+        "linode",
+        "sdk",
+        "rest",
+        "api"
+    ],
+    "homepage": "https://www.linode.com/docs/api/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tom Schlick",
+            "email": "tom@schlick.email"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "guzzlehttp/guzzle": "^7.3",
+        "guzzlehttp/psr7": "^2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0 || ^9.0",
+        "friendsofphp/php-cs-fixer": "^2.12"
+    },
+    "autoload": {
+        "psr-4": { "ZoneWatcher\\LinodeApiV4\\" : "src/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "ZoneWatcher\\LinodeApiV4\\Test\\" : "test/" }
+    }
+}

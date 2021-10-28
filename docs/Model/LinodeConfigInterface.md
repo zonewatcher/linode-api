@@ -1,0 +1,11 @@
+# # LinodeConfigInterface
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**label** | **string** | The name of this interface.  Required for &#x60;vlan&#x60; purpose interfaces. Must be an empty string or &#x60;null&#x60; for &#x60;public&#x60; purpose interfaces.  If the VLAN label is new, a VLAN is created. Up to 10 VLANs can be created in each data center region. To view your active VLANs, use the [VLANs List](/docs/api/networking/#vlans-list) endpoint.  May only consist of ASCII letters, numbers, and dashes (&#x60;-&#x60;).  Must be unique among the Linode&#39;s interfaces. | [optional]
+**ipam_address** | **string** | This Network Interface&#39;s private IP address in Classless Inter-Domain Routing (CIDR) notation.  Only used for &#x60;vlan&#x60; purpose interfaces. Must be an empty string or &#x60;null&#x60; for &#x60;public&#x60; purpose interfaces.  The Linode is configured to use this address for the associated interface upon reboot if Network Helper is enabled. If Network Helper is disabled, the address can be enabled with [manual static IP configuration](/docs/guides/linux-static-ip-configuration/).  Must be unique among the Linode&#39;s interfaces. | [optional]
+**purpose** | **string** | The type of interface.  * &#x60;public&#x60;   * Only one &#x60;public&#x60; interface per Linode can be defined.   * The Linode&#39;s default public IPv4 address is assigned to the &#x60;public&#x60; interface.   * A Linode must have a public interface in the first/eth0 position to be reachable via the public internet upon boot without additional system configuration. If no &#x60;public&#x60; interface is configured, the Linode is not directly reachable via the public internet. In this case, access can only be established via LISH or other Linodes connected to the same VLAN.  * &#x60;vlan&#x60;   * Configuring a &#x60;vlan&#x60; purpose interface attaches this Linode to the VLAN with the specified &#x60;label&#x60;.   * The Linode is configured to use the specified &#x60;ipam_address&#x60;, if any. | [optional]
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
